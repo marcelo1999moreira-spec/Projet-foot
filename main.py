@@ -3,7 +3,7 @@ from src.data_loader import load_raw_data
 from src.features import add_basic_features, prepare_model_dataset
 from src.eda import run_basic_eda
 from src.modeling import get_preprocessor, get_models
-from src.training import train_and_select_model, tune_best_random_forest, save_model
+from src.training import train_and_select_model, tune_best_random_forest  # removed save_model
 from src.evaluation import analyze_errors, plot_feature_importance, save_results_table
 from src.prediction import demo_predictions
 
@@ -53,13 +53,12 @@ def main():
         best_pipe, best_model_name, X_train, y_train, X_test, y_test, figures_dir
     )
 
-    print("\n[7] Saving results table and final model...")
-    save_results_table(results_df, results_dir)
-    model_path = save_model(best_pipe, models_dir, model_name="player_value_model.pkl")
-    print(f"Final model saved to: {model_path}")
+    
+    print("\n[7] Saving model outputs (CSV) in results/models...")
+    save_results_table(results_df, models_dir)
 
     print("\n[8] Error analysis and feature importance...")
-    errors_df = analyze_errors(names_test, y_test, best_y_pred, figures_dir, results_dir)
+    errors_df = analyze_errors(names_test, y_test, best_y_pred, figures_dir, models_dir)
     plot_feature_importance(best_pipe, numerical_cols, categorical_cols, figures_dir)
 
     print("\n[9] Demo predictions on a few players...")
