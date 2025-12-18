@@ -1,10 +1,10 @@
 For this project, I aim to predict the market value of football players using the FIFA 21 dataset available on Kaggle.
-This dataset contains thousands of players and provides detailed information such as age, overall rating, potential, position, and club. 
+This dataset contains thousands of players and provides detailed information such as age, overall rating, potential, position, and club.
 The main goal is to build a machine learning model that can estimate how much a player is worth based on their characteristics.
-The first step of the project will be data cleaning. 
-I will remove unnecessary columns such as player IDs, image links, and metadata that are not useful for prediction. 
+The first step of the project will be data cleaning.
+I will remove unnecessary columns such as player IDs, image links, and metadata that are not useful for prediction.
 I will also handle missing values by removing or replacing incomplete rows, ensuring the dataset is clean and consistent.
-Next, I will focus on selecting the most relevant variables for predicting player value. 
+Next, I will focus on selecting the most relevant variables for predicting player value.
 These include:
 
 -Age, as younger players with strong potential tend to have higher market values;
